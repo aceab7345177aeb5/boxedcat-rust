@@ -1,0 +1,7 @@
+[build]
+target = "x86_64-pc-windows-gnu"
+
+[target.x86_64-pc-windows-gnu]
+# Uses PATH — build.ps1 sets this before cargo build
+linker = "g++"
+ar = "ar"

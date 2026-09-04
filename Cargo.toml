@@ -1,0 +1,42 @@
+[package]
+name = "boxedcat"
+version = "0.1.0"
+edition = "2021"
+description = "The cat in the box; your dev environment is the box."
+license = "MIT"
+
+[lib]
+name = "boxedcat"
+path = "src/lib.rs"
+crate-type = ["staticlib"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rcgen = "0.13"
+time = { version = "0.3", features = ["std", "macros"] }
+windows-sys = { version = "0.59", features = [
+    "Win32_NetworkManagement_IpHelper",
+    "Win32_Networking_WinSock",
+    "Win32_Networking_WinHttp",
+    "Win32_System_Threading",
+    "Win32_System_ProcessStatus",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_Foundation",
+    "Win32_NetworkManagement_Ndis",
+    "Win32_System_Registry",
+    "Win32_System_SystemInformation",
+    "Win32_System_Com",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_Common",
+    "Win32_UI_Controls_Dialogs",
+    "Win32_UI_WindowsAndMessaging",
+]}
+
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+codegen-units = 1
+panic = "abort"

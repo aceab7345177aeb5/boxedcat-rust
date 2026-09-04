@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="icons/boxedcat_128.png">assets/icons/boxedcat_128.png</file>
+        <file alias="icons/boxedcat.ico">assets/icons/boxedcat.ico</file>
+        <file alias="icons/splash.png">assets/icons/splash.png</file>
+    </qresource>
+</RCC>
